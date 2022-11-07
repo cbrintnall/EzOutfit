@@ -2,3 +2,4 @@ Assemblies/
 bin/
 obj/
 packages/
+.vs/
