@@ -21,7 +21,7 @@ static class Dialog_ManageOutfits_OutfitDialogue_Patch
       .Select(entry => entry.pawn)
       .ToArray();
 
-    if (Widgets.ButtonText(createRect, "Create from pawn", overrideTextAnchor: overrideTextAnchor3))
+    if (Widgets.ButtonText(createRect, "Create".Translate(), overrideTextAnchor: overrideTextAnchor3))
     {
       List<FloatMenuOption> options = new List<FloatMenuOption>();
 
