@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>EzOutfit</name>
+    <author>otter bee</author>
+    <url>n/a</url>
+    <packageId>OtterBee.Ez.Outfit</packageId>
+    <supportedVersions>
+        <li>1.4</li>
+    </supportedVersions>
+    <description>Makes creating an outfit easier. 
+    
+Simply open up the menu tab of a pawn and hit "create outfit," an outfit will then be created from their existing gear.
+    </description>
+
+    <modDependencies>
+    <!-- Using hugslib as an example here. -->
+        <li>
+            <packageId>UnlimitedHugs.HugsLib</packageId>
+            <displayName>HugsLib</displayName>
+            <downloadUrl>https://github.com/UnlimitedHugs/RimworldHugsLib/releases/latest</downloadUrl>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/818773962</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+    <modDependenciesByVersion>
+        <v1.1>
+            <li>
+                <packageId>UnlimitedHugs.HugsLib</packageId>
+                <displayName>HugsLib</displayName>
+                <steamWorkshopUrl>https://github.com/UnlimitedHugs/RimworldHugsLib/releases/latest</steamWorkshopUrl>
+                <downloadUrl>steam://url/CommunityFilePage/818773962</downloadUrl>
+            </li>
+        </v1.1>
+    </modDependenciesByVersion>
+
+    <loadAfter>
+        <li>UnlimitedHugs.HugsLib</li>
+    </loadAfter>
+</ModMetaData>
