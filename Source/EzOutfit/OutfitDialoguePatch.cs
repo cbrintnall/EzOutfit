@@ -40,7 +40,7 @@ static class Dialog_ManageOutfits_OutfitDialogue_Patch
   {
     Outfit createdOutfit = Current.Game.outfitDatabase.MakeNewOutfit();
 
-    createdOutfit.label = $"{pawn.Name.ToStringShort}'s outfit";
+    createdOutfit.label = "OutfitName".Translate(pawn.Name.ToStringShort);
     createdOutfit.filter.SetDisallowAll();
 
     foreach(Apparel apparel in pawn.apparel.WornApparel)
