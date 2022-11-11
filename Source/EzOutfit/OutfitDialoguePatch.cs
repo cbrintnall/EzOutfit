@@ -11,7 +11,9 @@ static class Dialog_ManageOutfits_OutfitDialogue_Patch
 {
   const float BUTTON_WIDTH = 150f;
 
-  static void Postfix()
+  static AccessTools.FieldRef<Dialog_ManageOutfits, Outfit> selectedOutfitRef = AccessTools.FieldRefAccess<Dialog_ManageOutfits, Outfit>("selOutfitInt");
+
+  static void Postfix(Dialog_ManageOutfits __instance)
   {
     Rect createRect = new Rect((BUTTON_WIDTH * 3) + 30f, 0f, BUTTON_WIDTH, 35f);
     TextAnchor? overrideTextAnchor3 = new TextAnchor?();
@@ -28,7 +30,7 @@ static class Dialog_ManageOutfits_OutfitDialogue_Patch
       foreach (Pawn pawn in pawns)
       {
         options.Add(
-          new FloatMenuOption(pawn.Name.ToStringShort, () => CreateOutfitFromPawn(pawn))
+          new FloatMenuOption(pawn.Name.ToStringShort, () => CreateOutfitFromPawn(__instance, pawn))
         );
       }
 
@@ -36,16 +38,19 @@ static class Dialog_ManageOutfits_OutfitDialogue_Patch
     }
   }
 
-  static void CreateOutfitFromPawn(Pawn pawn)
+  static void CreateOutfitFromPawn(Dialog_ManageOutfits dialogue, Pawn pawn)
   {
     Outfit createdOutfit = Current.Game.outfitDatabase.MakeNewOutfit();
 
     createdOutfit.label = "OutfitName".Translate(pawn.Name.ToStringShort);
     createdOutfit.filter.SetDisallowAll();
+    createdOutfit.filter.SetAllow(SpecialThingFilterDefOf.AllowDeadmansApparel, false);
 
     foreach(Apparel apparel in pawn.apparel.WornApparel)
     {
       createdOutfit.filter.SetAllow(apparel.def, true);
     }
+
+    selectedOutfitRef(dialogue) = createdOutfit;
   }
 }
