@@ -1,4 +1,6 @@
-# EzOutfit
+![EzOutfit](./Assets/EzOutfit_READMEPreview.png)
+
+---
 
 A Rimworld mod dedicated to making it faster and easier to create outfits.
 

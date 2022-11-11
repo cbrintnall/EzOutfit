@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-    <name>EzOutfit</name>
+    <name>EzOutfitDev</name>
     <author>otter bee</author>
-    <url>n/a</url>
-    <packageId>OtterBee.Ez.Outfit</packageId>
+    <url>https://github.com/cbrintnall/EzOutfit</url>
+    <packageId>OtterBee.Ez.Outfit.Dev</packageId>
     <supportedVersions>
         <li>1.4</li>
+        <li>1.3</li>
+        <li>1.2</li>
+        <li>1.1</li>
+        <li>1.0</li>
     </supportedVersions>
     <description>A Rimworld mod dedicated to making it faster and easier to create outfits.
     </description>
