@@ -44,7 +44,21 @@ static class Dialog_ManageOutfits_OutfitDialogue_Patch
 
     createdOutfit.label = "OutfitName".Translate(pawn.Name.ToStringShort);
     createdOutfit.filter.SetDisallowAll();
-    createdOutfit.filter.SetAllow(SpecialThingFilterDefOf.AllowDeadmansApparel, false);
+    createdOutfit.filter.AllowedHitPointsPercents = pawn.outfits.CurrentOutfit.filter.AllowedHitPointsPercents;
+    createdOutfit.filter.AllowedQualityLevels = pawn.outfits.CurrentOutfit.filter.AllowedQualityLevels;
+
+    switch (ModSettings.TaintedDefault.Value)
+    {
+      case TaintedOptions.YES:
+        createdOutfit.filter.SetAllow(SpecialThingFilterDefOf.AllowDeadmansApparel, true);
+        break;
+      case TaintedOptions.NO:
+        createdOutfit.filter.SetAllow(SpecialThingFilterDefOf.AllowDeadmansApparel, false);
+        break;
+      case TaintedOptions.USE_PAWN:
+        createdOutfit.filter.SetAllow(SpecialThingFilterDefOf.AllowDeadmansApparel, pawn.apparel.WornApparel.Any(apparel => apparel.WornByCorpse));
+        break;
+    }
 
     foreach(Apparel apparel in pawn.apparel.WornApparel)
     {
