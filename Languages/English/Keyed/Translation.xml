@@ -2,4 +2,9 @@
 <LanguageData>
   <Create>Create from pawn</Create>
   <OutfitName>{0}'s outfit</OutfitName>
+  <TaintedDefaultTitle>Allow Tainted By Default</TaintedDefaultTitle>
+  <TaintedDefaultDescription>Options are yes, no, or use pawn (default). If yes, everytime you create from a pawn it'll allow tainted on the new outfit. If no, it'll have the opposite behavior. If "use pawn" it'll check if that pawn has any tainted clothes, if they do then it'll allow it, otherwise it will not.</TaintedDefaultDescription>
+  <TaintedDefault_YES>Yes</TaintedDefault_YES>
+  <TaintedDefault_NO>No</TaintedDefault_NO>
+  <TaintedDefault_USE_PAWN>Use Pawn</TaintedDefault_USE_PAWN>
 </LanguageData>
