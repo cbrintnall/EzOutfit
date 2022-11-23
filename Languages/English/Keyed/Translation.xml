@@ -7,4 +7,6 @@
   <TaintedDefault_YES>Yes</TaintedDefault_YES>
   <TaintedDefault_NO>No</TaintedDefault_NO>
   <TaintedDefault_USE_PAWN>Use Pawn</TaintedDefault_USE_PAWN>
+  <DropTainted>Drop all tainted apparel</DropTainted>
+  <NoTainted>none equipped</NoTainted>
 </LanguageData>

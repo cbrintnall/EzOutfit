@@ -65,13 +65,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Defs.cs" />
     <Compile Include="Entry.cs" />
+    <Compile Include="Patches\Alert_TatteredApparelTargetFix.cs" />
+    <Compile Include="Patches\DebugPatches.cs" />
+    <Compile Include="UI\LabelWithControls.cs" />
     <Compile Include="UI\CreateFromPawnButton.cs" />
     <Compile Include="UI\ExtrasButton.cs" />
-    <Compile Include="OutfitDialoguePatch.cs" />
+    <Compile Include="Patches\OutfitDialoguePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UI\ExtrasMenu.cs" />
+    <Compile Include="UI\ExtrasWindow.cs" />
+    <Compile Include="Utilities\Apparel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
