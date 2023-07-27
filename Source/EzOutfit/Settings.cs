@@ -1,5 +1,4 @@
-﻿using HugsLib;
-using HugsLib.Settings;
+﻿using HugsLib.Settings;
 
 public enum TaintedOptions
 {
