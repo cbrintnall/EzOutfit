@@ -1,22 +1,31 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
-using System.Linq;
-using System.Collections.Generic;
 
-[HarmonyPatch(typeof(Dialog_ManageOutfits))]
-[HarmonyPatch(nameof(Dialog_ManageOutfits.DoWindowContents))]
-static class Dialog_ManageOutfits_OutfitDialogue_Patch 
+public static class CreateFromPawn
 {
   const float BUTTON_WIDTH = 150f;
+  const float BUTTON_HEIGHT = 35f;
+  const float BUTTON_PADDING = 10f;
+
+  public static bool EnableAssignmentCopyAdjustment = false;
 
   static AccessTools.FieldRef<Dialog_ManageOutfits, Outfit> selectedOutfitRef = AccessTools.FieldRefAccess<Dialog_ManageOutfits, Outfit>("selOutfitInt");
 
-  static void Postfix(Dialog_ManageOutfits __instance)
+  public static void DoButton(Dialog_ManageOutfits window) => DoCreateButton(window);
+
+  static void DoCreateButton(Dialog_ManageOutfits window)
   {
-    Rect createRect = new Rect((BUTTON_WIDTH * 3) + 30f, 0f, BUTTON_WIDTH, 35f);
     TextAnchor? overrideTextAnchor3 = new TextAnchor?();
+    Rect createRect = new Rect(
+      (BUTTON_WIDTH * 3) + (BUTTON_PADDING * 3), 
+      EnableAssignmentCopyAdjustment ? BUTTON_HEIGHT + BUTTON_PADDING : 0f, 
+      BUTTON_WIDTH, 
+      BUTTON_HEIGHT
+    );
 
     var pawns = Find.ColonistBar
       .Entries
@@ -30,7 +39,7 @@ static class Dialog_ManageOutfits_OutfitDialogue_Patch
       foreach (Pawn pawn in pawns)
       {
         options.Add(
-          new FloatMenuOption(pawn.Name.ToStringShort, () => CreateOutfitFromPawn(__instance, pawn))
+          new FloatMenuOption(pawn.Name.ToStringShort, () => CreateOutfitFromPawn(window, pawn))
         );
       }
 
@@ -60,7 +69,7 @@ static class Dialog_ManageOutfits_OutfitDialogue_Patch
         break;
     }
 
-    foreach(Apparel apparel in pawn.apparel.WornApparel)
+    foreach (Apparel apparel in pawn.apparel.WornApparel)
     {
       createdOutfit.filter.SetAllow(apparel.def, true);
     }

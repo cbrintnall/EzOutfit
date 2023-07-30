@@ -4,7 +4,7 @@
 
 A Rimworld mod dedicated to making it faster and easier to create outfits.
 
-## How to use
+## Basic Usage
 
 1. Open up the assign menu
 2. Open up "Manage Outfits"
@@ -13,10 +13,10 @@ A Rimworld mod dedicated to making it faster and easier to create outfits.
 
 Once selected, a new outfit will be created using the selected pawn's apparel as a template. This can be accessed under the outfit label "[pawn's name]'s outfit."
 
-## Planned Features
+### Additional Usage
 
-This is meant to be a relatively simple mod, but there is some QoL changes I'd like to add:
+There are a few other QoL changes with this mod. There is now an additional button in the pawn assignment menu that allows immediately dropping all tainted / tattered apparel. 
 
-- [ ] Setting the quality range for an outfit
-- [ ] Easier way to manage whether tainted is allowed or not
-- [ ] Simple options menu for above
+### Mod Compatibility
+
+This mod is proudly compatible with Assignment Copy which features similar, but well paired functionality.
