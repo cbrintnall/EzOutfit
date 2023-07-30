@@ -1,4 +1,5 @@
-﻿using HugsLib.Settings;
+﻿using HugsLib;
+using HugsLib.Settings;
 
 public enum TaintedOptions
 {
@@ -10,4 +11,6 @@ public enum TaintedOptions
 public static class ModSettings
 {
   public static SettingHandle<TaintedOptions> TaintedDefault;
+  public static SettingHandle<bool> DropAllIncludesTattered;
+  public static SettingHandle<bool> DropAllIncludesTainted;
 }

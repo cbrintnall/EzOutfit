@@ -75,7 +75,6 @@
     <Compile Include="Patches\OutfitDialoguePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="UI\ExtrasMenu.cs" />
     <Compile Include="UI\ExtrasWindow.cs" />
     <Compile Include="Utilities\Apparel.cs" />
   </ItemGroup>

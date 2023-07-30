@@ -2,6 +2,7 @@
 using HarmonyLib;
 using System.Reflection;
 using HugsLib;
+using HugsLib.Settings;
 
 [EarlyInit]
 public class EzOutfit : ModBase
@@ -27,13 +28,19 @@ public class EzOutfit : ModBase
   {
     base.DefsLoaded();
 
-    ModSettings.TaintedDefault = Settings.GetHandle("TaintedDefault", "TaintedDefaultTitle".Translate(), "TaintedDefaultDescription".Translate(), TaintedOptions.USE_PAWN, enumPrefix: "TaintedDefault_");
+    ModSettings.TaintedDefault = GetSetting("TaintedDefault", TaintedOptions.USE_PAWN);
+    ModSettings.DropAllIncludesTattered = GetSetting("DropAllIncludesTattered", true);
+    ModSettings.DropAllIncludesTainted = GetSetting("DropAllIncludesTainted", true);
   }
 
   public override void SettingsChanged()
   {
     base.SettingsChanged();
 
-    ModSettings.TaintedDefault = Settings.GetHandle("TaintedDefault", "TaintedDefaultTitle".Translate(), "TaintedDefaultDescription".Translate(), TaintedOptions.USE_PAWN, enumPrefix: "TaintedDefault_");
+    ModSettings.TaintedDefault = GetSetting("TaintedDefault", TaintedOptions.USE_PAWN);
+    ModSettings.DropAllIncludesTattered = GetSetting("DropAllIncludesTattered", true);
+    ModSettings.DropAllIncludesTainted = GetSetting("DropAllIncludesTainted", true);
   }
+
+  private SettingHandle<T> GetSetting<T>(string name, T defaultValue) => Settings.GetHandle(name, $"{name}Title".Translate(), $"{name}Description".Translate(), defaultValue, enumPrefix: $"{name}_");
 }

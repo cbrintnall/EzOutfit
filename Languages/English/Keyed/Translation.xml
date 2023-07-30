@@ -9,4 +9,8 @@
   <TaintedDefault_USE_PAWN>Use Pawn</TaintedDefault_USE_PAWN>
   <DropTainted>Drop all tainted apparel</DropTainted>
   <NoTainted>none equipped</NoTainted>
+  <DropAllIncludesTatteredTitle>Drop All Drops Tattered</DropAllIncludesTatteredTitle>
+  <DropAllIncludesTatteredDescription>If this is enabled, the drop all button in the pawn assignment menu will include dropping equipment considered tattered. More specifically, anything apparel that is below 50% health. </DropAllIncludesTatteredDescription>
+  <DropAllIncludesTaintedTitle>Drop All Drops Tainted</DropAllIncludesTaintedTitle>
+  <DropAllIncludesTaintedDescription>If this is enabled, the drop all button in the pawn assignment menu will include dropping anything considered tainted. More specifically, that is any apparel that has been worn by a corpse.. Ew!</DropAllIncludesTaintedDescription>
 </LanguageData>
