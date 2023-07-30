@@ -6,8 +6,6 @@ using Verse;
 [HarmonyPatch(typeof(Alert), "OnClick")]
 public static class Alert_TatteredApparelTargetFix
 {
-  private static bool highlightDropButton = false;
-
   /// <summary>
   /// Overrides the tattered apparel alert to direct the player to the appropriate 
   /// action they can take. For a single pawn, we will direct them to that pawn's apparel

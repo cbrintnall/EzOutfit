@@ -13,10 +13,5 @@ static class Dialog_ManageOutfits_OutfitDialogue_Patch
   static void Postfix(Dialog_ManageOutfits __instance)
   {
     CreateFromPawn.DoButton(__instance);
-
-    if (selectedOutfitRef(__instance) != null)
-    {
-
-    }
   }
 }

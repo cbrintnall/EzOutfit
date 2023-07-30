@@ -13,4 +13,6 @@
   <DropAllIncludesTatteredDescription>If this is enabled, the drop all button in the pawn assignment menu will include dropping equipment considered tattered. More specifically, anything apparel that is below 50% health. </DropAllIncludesTatteredDescription>
   <DropAllIncludesTaintedTitle>Drop All Drops Tainted</DropAllIncludesTaintedTitle>
   <DropAllIncludesTaintedDescription>If this is enabled, the drop all button in the pawn assignment menu will include dropping anything considered tainted. More specifically, that is any apparel that has been worn by a corpse.. Ew!</DropAllIncludesTaintedDescription>
+  <AssignmentCopyPackageIdTitle>Assignment Copy Package ID</AssignmentCopyPackageIdTitle>
+  <AssignmentCopyPackageIdDescription>The package ID for the mod "Assignment Copy." Only worry about this setting if you are have Assignment Copy installed and are noticing UI issues in the outfit assignment menu. This setting is here in case the mod author changes this value in the future. This is used to detect if that mod is installed and then adjust our UI accordingly.</AssignmentCopyPackageIdDescription>
 </LanguageData>

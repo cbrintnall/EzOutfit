@@ -28,18 +28,28 @@ public class EzOutfit : ModBase
   {
     base.DefsLoaded();
 
-    ModSettings.TaintedDefault = GetSetting("TaintedDefault", TaintedOptions.USE_PAWN);
-    ModSettings.DropAllIncludesTattered = GetSetting("DropAllIncludesTattered", true);
-    ModSettings.DropAllIncludesTainted = GetSetting("DropAllIncludesTainted", true);
+    ReadSettings();
+
+    if (ModsConfig.IsActive(ModSettings.AssignmentCopyPackageId.Value))
+    {
+      Logger.Warning("Assignment copy is detected, enabling UI adjustments!");
+      CreateFromPawn.EnableAssignmentCopyAdjustment = true;
+    }
   }
 
   public override void SettingsChanged()
   {
     base.SettingsChanged();
 
+    ReadSettings();
+  }
+
+  private void ReadSettings()
+  {
     ModSettings.TaintedDefault = GetSetting("TaintedDefault", TaintedOptions.USE_PAWN);
     ModSettings.DropAllIncludesTattered = GetSetting("DropAllIncludesTattered", true);
     ModSettings.DropAllIncludesTainted = GetSetting("DropAllIncludesTainted", true);
+    ModSettings.AssignmentCopyPackageId = GetSetting("AssignmentCopyPackageId", "Haecriver.OutfitCopy");
   }
 
   private SettingHandle<T> GetSetting<T>(string name, T defaultValue) => Settings.GetHandle(name, $"{name}Title".Translate(), $"{name}Description".Translate(), defaultValue, enumPrefix: $"{name}_");

@@ -8,6 +8,10 @@ using Verse;
 public static class CreateFromPawn
 {
   const float BUTTON_WIDTH = 150f;
+  const float BUTTON_HEIGHT = 35f;
+  const float BUTTON_PADDING = 10f;
+
+  public static bool EnableAssignmentCopyAdjustment = false;
 
   static AccessTools.FieldRef<Dialog_ManageOutfits, Outfit> selectedOutfitRef = AccessTools.FieldRefAccess<Dialog_ManageOutfits, Outfit>("selOutfitInt");
 
@@ -15,7 +19,12 @@ public static class CreateFromPawn
 
   static void DoCreateButton(Dialog_ManageOutfits window)
   {
-    Rect createRect = new Rect((BUTTON_WIDTH * 3) + 30f, 0f, BUTTON_WIDTH, 35f);
+    Rect createRect = new Rect(
+      (BUTTON_WIDTH * 3) + (BUTTON_PADDING * 3), 
+      EnableAssignmentCopyAdjustment ? BUTTON_HEIGHT + BUTTON_PADDING : 0f, 
+      BUTTON_WIDTH, 
+      BUTTON_HEIGHT
+    );
     TextAnchor? overrideTextAnchor3 = new TextAnchor?();
 
     var pawns = Find.ColonistBar
