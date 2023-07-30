@@ -8,6 +8,8 @@ using HugsLib.Settings;
 public class EzOutfit : ModBase
 {
   const string MOD_PACKAGE = "OtterBee.Ez.Outfit";
+  const float MOD_VERSION = 0.3f;
+
   public override string ModIdentifier => "EzOutfit";
   protected override bool HarmonyAutoPatch => false;
 
@@ -21,7 +23,7 @@ public class EzOutfit : ModBase
     Logger.Message("Patching...");
     var harmony = new Harmony(MOD_PACKAGE);
     harmony.PatchAll(Assembly.GetExecutingAssembly());
-    Logger.Message("Done");
+    Logger.Message($"Done, {ModIdentifier} loaded version={MOD_VERSION}");
   }
 
   public override void DefsLoaded()

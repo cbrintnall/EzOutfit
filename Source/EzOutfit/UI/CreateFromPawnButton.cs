@@ -19,13 +19,13 @@ public static class CreateFromPawn
 
   static void DoCreateButton(Dialog_ManageOutfits window)
   {
+    TextAnchor? overrideTextAnchor3 = new TextAnchor?();
     Rect createRect = new Rect(
       (BUTTON_WIDTH * 3) + (BUTTON_PADDING * 3), 
       EnableAssignmentCopyAdjustment ? BUTTON_HEIGHT + BUTTON_PADDING : 0f, 
       BUTTON_WIDTH, 
       BUTTON_HEIGHT
     );
-    TextAnchor? overrideTextAnchor3 = new TextAnchor?();
 
     var pawns = Find.ColonistBar
       .Entries
