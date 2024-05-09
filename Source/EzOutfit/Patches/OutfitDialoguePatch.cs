@@ -1,10 +1,8 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using UnityEngine;
-using Verse;
-using System.Linq;
-using System.Collections.Generic;
 
+
+#if V1_4
 [HarmonyPatch(typeof(Dialog_ManageOutfits), nameof(Dialog_ManageOutfits.DoWindowContents))]
 static class Dialog_ManageOutfits_OutfitDialogue_Patch 
 {
@@ -15,3 +13,4 @@ static class Dialog_ManageOutfits_OutfitDialogue_Patch
     CreateFromPawn.DoButton(__instance);
   }
 }
+#endif

@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
+#if V1_4
 public static class CreateFromPawn
 {
   const float BUTTON_WIDTH = 150f;
@@ -77,3 +78,4 @@ public static class CreateFromPawn
     selectedOutfitRef(dialogue) = createdOutfit;
   }
 }
+#endif

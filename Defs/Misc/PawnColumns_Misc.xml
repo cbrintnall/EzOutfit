@@ -1,7 +1,0 @@
-<Defs>
-  <PawnColumnDef Name="LabelWithAssignControls">
-    <defName>LabelWithAssignControls</defName>
-    <workerClass>PawnColumnWorker_LabelWithControls</workerClass>
-    <widthPriority>100</widthPriority>
-  </PawnColumnDef>
-</Defs>

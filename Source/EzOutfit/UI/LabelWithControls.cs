@@ -6,6 +6,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 
+#if V1_4
 public class PawnColumnWorker_LabelWithControls : PawnColumnWorker_Label
 {
   const float RectDim = 24f;
@@ -73,3 +74,4 @@ public class PawnColumnWorker_LabelWithControls : PawnColumnWorker_Label
     }
   }
 }
+#endif

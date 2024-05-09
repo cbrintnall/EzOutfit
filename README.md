@@ -15,8 +15,18 @@ Once selected, a new outfit will be created using the selected pawn's apparel as
 
 ### Additional Usage
 
-There are a few other QoL changes with this mod. There is now an additional button in the pawn assignment menu that allows immediately dropping all tainted / tattered apparel. 
+* Additional button in the pawn assignment menu that allows immediately dropping all tainted / tattered apparel.
+* Tainted apparel alert will now take you to outfit policies for fixing upon click
 
 ### Mod Compatibility
 
 This mod is proudly compatible with Assignment Copy which features similar, but well paired functionality.
+
+### Rimworld Version Map
+
+* `V1.4 -> 0.4`
+* `V1.5 -> > 0.4`
+
+### Extras
+
+- [Steam workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2885961570)
