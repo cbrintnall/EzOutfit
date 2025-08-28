@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch RimWorld (Quicktest)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "F:/SteamLibrary/steamapps/common/RimWorld/RimWorldWin64.exe",
+      "args": ["-quicktest"],
+      "console": "internalConsole"
+    }
+  ]
+}

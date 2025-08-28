@@ -3,5 +3,5 @@
 [DefOf]
 public static class EzOutfitDefs
 {
-  public static MainButtonDef Assign;
+    public static MainButtonDef Assign;
 }
