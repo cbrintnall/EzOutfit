@@ -36,13 +36,12 @@ public class PawnColumnWorker_LabelWithControls : PawnColumnWorker_Label
 
         if (Widgets.ButtonImage(dropRect, TexButton.Drop, buttonColor, hoverColor, hasTainted))
         {
-            DropAllTainted();
+            PawnApparel.DropAllTainted();
         }
 
         Rect headerRect = new Rect(rect.x, rect.y, rect.width - RectDim, rect.height);
 
         base.DoHeader(headerRect, table);
     }
-  }
 }
 #endif

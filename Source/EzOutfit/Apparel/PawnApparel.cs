@@ -8,19 +8,13 @@ public static class PawnApparel
 {
     public static void CreateCopyApparelOptions(Action<Pawn> onCreate)
     {
-
         List<FloatMenuOption> options = new List<FloatMenuOption>();
 
-        var pawns = Find.ColonistBar
-              .Entries
-              .Select(entry => entry.pawn)
-              .ToArray();
+        var pawns = Find.ColonistBar.Entries.Select(entry => entry.pawn).ToArray();
 
         foreach (Pawn pawn in pawns)
         {
-            options.Add(
-              new FloatMenuOption(pawn.Name.ToStringShort, () => onCreate(pawn))
-            );
+            options.Add(new FloatMenuOption(pawn.Name.ToStringShort, () => onCreate(pawn)));
         }
 
         Find.WindowStack.Add(new FloatMenu(options));
@@ -28,13 +22,12 @@ public static class PawnApparel
 
     public static void DropAllTainted()
     {
-        var pawns = Find.ColonistBar
-          .Entries
-          .Select(entry => entry.pawn)
-          .ToArray();
+        var pawns = Find.ColonistBar.Entries.Select(entry => entry.pawn).ToArray();
 
-        var dropQueue = pawns
-          .Select(pawn => Tuple.Create(pawn, pawn.apparel.WornApparel.Where(apparel => apparel.IsUpsetting())));
+        var dropQueue = pawns.Select(
+            pawn =>
+                Tuple.Create(pawn, pawn.apparel.WornApparel.Where(apparel => apparel.IsUpsetting()))
+        );
 
         foreach (var pairing in dropQueue)
         {
@@ -45,7 +38,9 @@ public static class PawnApparel
             {
                 if (pairing.Item1.apparel.TryDrop(apparel))
                 {
-                    Log.Message($"Pawn {pawn.Name.ToStringShort} successfully dropped {apparel.Label}");
+                    Log.Message(
+                        $"Pawn {pawn.Name.ToStringShort} successfully dropped {apparel.Label}"
+                    );
                 }
                 else
                 {
@@ -55,7 +50,13 @@ public static class PawnApparel
         }
     }
 
-    public static bool AnyPawnIsUpset() => Find.ColonistBar
-          .Entries
-          .Select(entry => entry.pawn).Any(pawn => pawn.apparel.WornApparel.Where(apparel => apparel.IsUpsetting()).FirstOrDefault() != null);
+    public static bool AnyPawnIsUpset() =>
+        Find.ColonistBar.Entries
+            .Select(entry => entry.pawn)
+            .Any(
+                pawn =>
+                    pawn.apparel.WornApparel
+                        .Where(apparel => apparel.IsUpsetting())
+                        .FirstOrDefault() != null
+            );
 }

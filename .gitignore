@@ -1,6 +1,6 @@
 Assemblies/** 
-*/
 bin/
 obj/
 packages/
 .vs/
+lib/

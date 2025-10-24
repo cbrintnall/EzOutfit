@@ -3,6 +3,7 @@ using RimWorld;
 using System.Collections.Generic;
 using Verse;
 
+#if V1_5
 [HarmonyPatch(typeof(Dialog_ManageApparelPolicies), "CreateNewPolicy")]
 class Dialog_ManageApparelPolicies_OverrideNew
 {
@@ -62,3 +63,4 @@ class Dialog_ManageApparelPolicies_OverrideNew
         }
     }
 }
+#endif
