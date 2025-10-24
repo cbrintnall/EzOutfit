@@ -8,7 +8,7 @@ using HugsLib.Settings;
 public class EzOutfit : ModBase
 {
     const bool DROP_TAINTED_FEATURE = false;
-    const string MOD_PACKAGE = "OtterBee.Ez.Outfit";
+    const string MOD_PACKAGE = "Odder.Ez.Outfit";
     const float MOD_VERSION = 0.5f;
 
     public override string ModIdentifier => "EzOutfit";

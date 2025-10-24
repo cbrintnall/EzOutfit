@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>EzOutfit</name>
-  <author>otter bee</author>
+  <author>odder</author>
   <url>https://github.com/cbrintnall/EzOutfit</url>
   <packageId>Odder.Ez.Outfit</packageId>
   <modVersion IgnoreIfNoMatchingField="True">v0.5</modVersion>
