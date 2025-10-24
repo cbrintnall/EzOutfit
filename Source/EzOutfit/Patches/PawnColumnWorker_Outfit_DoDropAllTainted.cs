@@ -3,7 +3,9 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-[HarmonyPatch(typeof(PawnColumnWorker_Outfit), "DoHeader")]
+// [HarmonyPatch(typeof(PawnColumnWorker_Outfit), "DoHeader")]
+// TODO: Add this functionality in post 1.6 update
+#if (V1_5 || V1_6)
 public class PawnColumnWorker_Outfit_DoDropAllTainted
 {
     static float BUTTON_OFFSET = 8.0f;
@@ -32,3 +34,4 @@ public class PawnColumnWorker_Outfit_DoDropAllTainted
         return true;
     }
 }
+#endif

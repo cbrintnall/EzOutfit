@@ -7,8 +7,9 @@ using HugsLib.Settings;
 [EarlyInit]
 public class EzOutfit : ModBase
 {
+    const bool DROP_TAINTED_FEATURE = false;
     const string MOD_PACKAGE = "OtterBee.Ez.Outfit";
-    const float MOD_VERSION = 0.4f;
+    const float MOD_VERSION = 0.5f;
 
     public override string ModIdentifier => "EzOutfit";
     protected override bool HarmonyAutoPatch => false;
@@ -23,6 +24,8 @@ public class EzOutfit : ModBase
         var harmony = new Harmony(MOD_PACKAGE);
         harmony.PatchAll(Assembly.GetExecutingAssembly());
         Logger.Message($"Done, {ModIdentifier} loaded version={MOD_VERSION}");
+        var patched = string.Join(", ", harmony.GetPatchedMethods());
+        Logger.Message($"Patched the following methods: '{patched}'");
     }
 
     public override void DefsLoaded()
@@ -31,11 +34,13 @@ public class EzOutfit : ModBase
 
         ReadSettings();
 
+#if V1_4
         if (ModsConfig.IsActive(ModSettings.AssignmentCopyPackageId.Value))
         {
             Logger.Warning("Assignment copy is detected, enabling UI adjustments!");
-            // CreateFromPawn.EnableAssignmentCopyAdjustment = true;
+            CreateFromPawn.EnableAssignmentCopyAdjustment = true;
         }
+#endif
     }
 
     public override void SettingsChanged()
@@ -48,12 +53,16 @@ public class EzOutfit : ModBase
     private void ReadSettings()
     {
         ModSettings.TaintedDefault = GetSetting("TaintedDefault", TaintedOptions.USE_PAWN);
-        ModSettings.DropAllIncludesTattered = GetSetting("DropAllIncludesTattered", true);
-        ModSettings.DropAllIncludesTainted = GetSetting("DropAllIncludesTainted", true);
         ModSettings.AssignmentCopyPackageId = GetSetting(
             "AssignmentCopyPackageId",
             "Haecriver.OutfitCopy"
         );
+
+        if (DROP_TAINTED_FEATURE)
+        {
+            ModSettings.DropAllIncludesTattered = GetSetting("DropAllIncludesTattered", true);
+            ModSettings.DropAllIncludesTainted = GetSetting("DropAllIncludesTainted", true);
+        }
     }
 
     private SettingHandle<T> GetSetting<T>(string name, T defaultValue) =>

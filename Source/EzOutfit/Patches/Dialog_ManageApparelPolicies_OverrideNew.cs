@@ -3,7 +3,7 @@ using RimWorld;
 using System.Collections.Generic;
 using Verse;
 
-#if V1_5
+#if (V1_5 || V1_6)
 [HarmonyPatch(typeof(Dialog_ManageApparelPolicies), "CreateNewPolicy")]
 class Dialog_ManageApparelPolicies_OverrideNew
 {
