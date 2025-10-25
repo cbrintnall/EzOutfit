@@ -1,4 +1,5 @@
-Assemblies/** 
+Assemblies/**
+*.dll
 bin/
 obj/
 packages/
